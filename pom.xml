@@ -32,6 +32,12 @@
       <artifactId>grpc-stub</artifactId>
       <version>1.32.2</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.grpc/grpc-services -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-services</artifactId>
+      <version>1.32.2</version>
+    </dependency>
     <dependency>
       <!-- necessary for Java 9+ -->
       <groupId>org.apache.tomcat</groupId>
