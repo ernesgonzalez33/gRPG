@@ -68,7 +68,7 @@ public class ThrowDiceServer {
      * Main method. This comment makes the linter happy.
      */
     public static void main(String[] args) throws Exception {
-        ThrowDiceServer server = new ThrowDiceServer(8980);
+        ThrowDiceServer server = new ThrowDiceServer(Constants.DICE_PORT);
         server.start();
         server.blockUntilShutdown();
     }
