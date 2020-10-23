@@ -5,7 +5,8 @@
 
   <groupId>io.grpg</groupId>
   <artifactId>dice</artifactId>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
+  <packaging>jar</packaging>
 
   <name>grpg</name>
   <url>http://www.grpg.io</url>
@@ -36,6 +37,11 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-services</artifactId>
+      <version>1.32.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
       <version>1.32.2</version>
     </dependency>
     <dependency>
@@ -72,6 +78,30 @@
       </extension>
     </extensions>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>io.grpg.dice.ThrowDiceServer</mainClass>
+            </manifest>
+          </archive>
+          <appendAssemblyId>false</appendAssemblyId>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
