@@ -1,3 +1,5 @@
+:doctype: book
+
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -10,7 +12,7 @@ endif::[]
 
 An RPG game built by using gRPC services
 
-== How to build
+== How to use
 
 Run the following commands from the root of the project to build and test the dice server:
 
@@ -22,9 +24,9 @@ java -jar target/dice-0.1.0.jar <2>
 
 grpcurl -import-path src/main/proto -proto dice.proto -plaintext -d '{"ask": "Throw dice"}' localhost:8980 dice.ThrowDiceService/ThrowDice <3>
 ----
-<1> Build the jar with dependencias and the gRPC classes needed for the server to run
+<1> Build the jar with dependencies and the gRPC classes needed for the server to run
 <2> Run the server
-<3> Test the server with grpcurl
+<3> Test the server with `grpcurl`. For more go to: https://github.com/fullstorydev/grpcurl
 
 IMPORTANT: The string for asking the value has to be: "Throw dice". If not, it won't return a value.
 
